@@ -36,9 +36,13 @@ import { AuditLogRepository } from '../repositories/audit-log';
 import { RoleRepository } from '../repositories/role';
 import { IRole } from '../db/models/role/role';
 import { UserRepository } from '../repositories/user';
+//fetch data
+import {getData} from './data_fetch/data';
+
 
 const fileStreamRotator = require('file-stream-rotator');
 const busboy = require('connect-busboy');
+
 
 export class Server {
   public serverLogPath: string;
@@ -95,6 +99,8 @@ export class Server {
       const superAdminRole = await server.upsertSuperAdminRole();
       await server.upsertSuperAdminUser(superAdminRole);
 
+      //fetches data from weather api
+      getData();
       // start server
       server.startServer();
 
@@ -221,6 +227,17 @@ export class Server {
 
     this.systemUserId = system._id.toString();
   }
+
+
+  //get data samo dohvati i sacuva u neku varijablu
+  // da ne trpam svasta u nju
+  // ako hocu da testiram onda sa debugerom,
+  //i pozovem sledeci korak i onda on pokaze sta ona vraca
+  //prije cuvanja u bazi provjerim da li ima ista u bazi,
+  //ako hocu pri inicijalnom pokretanju da sacuva
+  //napraviti ruter kao u primjerima i handleri pa sa next nesto
+
+
 
   async upsertSuperAdminRole(): Promise<Document & IRole> {
     const rr = new RoleRepository(this, this.systemUserId);

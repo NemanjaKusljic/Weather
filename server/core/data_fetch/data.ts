@@ -1,6 +1,6 @@
 //import * as express from 'express';
 import { Router } from 'express'
-import * as rpn from 'request-promise-native';
+import * as requestNative from 'request-promise-native';
 //const app: Express = express();
 const router = Router()
 
@@ -12,9 +12,9 @@ function randomRange(min: number, max: number)
 }
 
 
-const getData = (req:any, res:any) => {
-  let lat = randomRange(-85, 85);
-  let lon = randomRange(-180, 180);
+ export async function getData() {
+  let lat = randomRange(40, 70);
+  let lon = randomRange(10, 70);
   let cities = 10;
 
   let appId  = 'appid=fa7cf345eb57c4e04bc881583e642fab';
@@ -27,14 +27,9 @@ const getData = (req:any, res:any) => {
     json: true // Automatically parses the JSON string in the response
 };
 
-  rpn(options)
-    .then(parsedBody => {
-      console.log(parsedBody)
-      res.json(parsedBody);
-    })
-    .catch(err => {
-      res.send(err);
-    })
+  const data = await requestNative(options);
+  console.log(data);
+  return data;
 }
 
 router
@@ -44,8 +39,5 @@ router
 
   export default router
 
-  //koristiti request-promise biblioteku da bude ljepse
-  /* u server.ts na 205 on pravi usera, ako ga nema sa 
-  propertijem isSystem. */
 
 
