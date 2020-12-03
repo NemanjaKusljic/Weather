@@ -28,7 +28,7 @@ function randomRange(min: number, max: number)
 };
 
   const data = await requestNative(options);
-  console.log(data);
+   console.log(data.list)
   return data;
 }
 

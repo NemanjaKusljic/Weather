@@ -39,7 +39,6 @@ import { UserRepository } from '../repositories/user';
 //fetch data
 import {getData} from './data_fetch/data';
 
-
 const fileStreamRotator = require('file-stream-rotator');
 const busboy = require('connect-busboy');
 
@@ -227,16 +226,6 @@ export class Server {
 
     this.systemUserId = system._id.toString();
   }
-
-
-  //get data samo dohvati i sacuva u neku varijablu
-  // da ne trpam svasta u nju
-  // ako hocu da testiram onda sa debugerom,
-  //i pozovem sledeci korak i onda on pokaze sta ona vraca
-  //prije cuvanja u bazi provjerim da li ima ista u bazi,
-  //ako hocu pri inicijalnom pokretanju da sacuva
-  //napraviti ruter kao u primjerima i handleri pa sa next nesto
-
 
 
   async upsertSuperAdminRole(): Promise<Document & IRole> {

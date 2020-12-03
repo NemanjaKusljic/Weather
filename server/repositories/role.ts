@@ -17,3 +17,4 @@ export class RoleRepository extends Repository<IRole> {
     });
   }
 }
+
