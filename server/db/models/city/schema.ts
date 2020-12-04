@@ -21,12 +21,12 @@ export const CitySchema: SchemaDefinition = {
     deg: Number
   },
   sys: {
-    type: Number,
-    id: Number,
-    message: Number,
-    country: String,
-    sunrise: Number,
-    sunset: Number
+    // type: Number,
+    // id: Number,
+    // message: Number,
+    country: String
+    // sunrise: Number,
+    // sunset: Number
   },
   weather: [
     {

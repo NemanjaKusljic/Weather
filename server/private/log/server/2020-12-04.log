@@ -1,0 +1,67 @@
+2020-12-04T08:36:54.794Z - info: APPLICATION: Environment: local!
+2020-12-04T08:36:54.797Z - info: MONGO: Connection attempted with local:local
+2020-12-04T08:36:54.870Z - info: MONGO: Mongoose connected!
+2020-12-04T08:36:55.065Z - info: NODE: HTTPS listening on port 8043.
+2020-12-04T11:10:23.788Z - info: APPLICATION: Environment: local!
+2020-12-04T11:10:23.791Z - info: MONGO: Connection attempted with local:local
+2020-12-04T11:10:23.863Z - info: MONGO: Mongoose connected!
+2020-12-04T11:10:24.188Z - info: NODE: HTTPS listening on port 8043.
+2020-12-04T11:27:50.968Z - info: MONGO: Mongoose disconnected!
+2020-12-04T11:28:08.590Z - info: APPLICATION: Environment: local!
+2020-12-04T11:28:08.593Z - info: MONGO: Connection attempted with local:local
+2020-12-04T11:28:08.669Z - info: MONGO: Mongoose connected!
+2020-12-04T11:28:08.965Z - info: NODE: HTTPS listening on port 8043.
+2020-12-04T12:22:13.837Z - info: MONGO: Mongoose disconnected!
+2020-12-04T12:23:10.614Z - info: APPLICATION: Environment: local!
+2020-12-04T12:23:10.616Z - info: MONGO: Connection attempted with local:local
+2020-12-04T12:23:10.694Z - info: MONGO: Mongoose connected!
+2020-12-04T12:23:11.026Z - info: NODE: HTTPS listening on port 8043.
+2020-12-04T12:27:30.425Z - info: APPLICATION: Environment: local!
+2020-12-04T12:27:30.426Z - info: MONGO: Connection attempted with local:local
+2020-12-04T12:27:30.481Z - info: MONGO: Mongoose connected!
+2020-12-04T12:27:30.680Z - error: uncaughtException: listen EADDRINUSE: address already in use :::8043 date=Fri Dec 04 2020 13:27:30 GMT+0100 (Central European Standard Time), pid=8072, uid=null, gid=null, cwd=C:\Users\Ematic\Documents\Test\server, execPath=C:\Program Files\nodejs\node.exe, version=v14.15.0, argv=[C:\Program Files\nodejs\node.exe, C:\Users\Ematic\Documents\Test\server\run.ts], rss=741154816, heapTotal=327749632, heapUsed=294796112, external=20008058, arrayBuffers=18369027, loadavg=[0, 0, 0], uptime=784873
+Error: listen EADDRINUSE: address already in use :::8043
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Server.startServer (C:\Users\Ematic\Documents\Test\server\core\server.ts:200:42)
+    at Function.bootstrap (C:\Users\Ematic\Documents\Test\server\core\server.ts:103:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at run (C:\Users\Ematic\Documents\Test\server\run.ts:5:5)
+2020-12-04T12:28:12.715Z - info: APPLICATION: Environment: local!
+2020-12-04T12:28:12.717Z - info: MONGO: Connection attempted with local:local
+2020-12-04T12:28:12.770Z - info: MONGO: Mongoose connected!
+2020-12-04T12:28:12.969Z - error: uncaughtException: listen EADDRINUSE: address already in use :::8043 date=Fri Dec 04 2020 13:28:12 GMT+0100 (Central European Standard Time), pid=10164, uid=null, gid=null, cwd=C:\Users\Ematic\Documents\Test\server, execPath=C:\Program Files\nodejs\node.exe, version=v14.15.0, argv=[C:\Program Files\nodejs\node.exe, C:\Users\Ematic\Documents\Test\server\run.ts], rss=727977984, heapTotal=322768896, heapUsed=296234592, external=20024129, arrayBuffers=18385098, loadavg=[0, 0, 0], uptime=784915
+Error: listen EADDRINUSE: address already in use :::8043
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Server.startServer (C:\Users\Ematic\Documents\Test\server\core\server.ts:200:42)
+    at Function.bootstrap (C:\Users\Ematic\Documents\Test\server\core\server.ts:103:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at run (C:\Users\Ematic\Documents\Test\server\run.ts:5:5)
+2020-12-04T12:30:19.484Z - info: APPLICATION: Environment: local!
+2020-12-04T12:30:19.485Z - info: MONGO: Connection attempted with local:local
+2020-12-04T12:30:19.534Z - info: MONGO: Mongoose connected!
+2020-12-04T12:30:19.725Z - error: uncaughtException: listen EADDRINUSE: address already in use :::8043 date=Fri Dec 04 2020 13:30:19 GMT+0100 (Central European Standard Time), pid=9820, uid=null, gid=null, cwd=C:\Users\Ematic\Documents\Test\server, execPath=C:\Program Files\nodejs\node.exe, version=v14.15.0, argv=[C:\Program Files\nodejs\node.exe, C:\Users\Ematic\Documents\Test\server\run.ts], rss=715890688, heapTotal=322244608, heapUsed=297144704, external=20082363, arrayBuffers=18443332, loadavg=[0, 0, 0], uptime=785042
+Error: listen EADDRINUSE: address already in use :::8043
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Server.startServer (C:\Users\Ematic\Documents\Test\server\core\server.ts:200:42)
+    at Function.bootstrap (C:\Users\Ematic\Documents\Test\server\core\server.ts:103:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at run (C:\Users\Ematic\Documents\Test\server\run.ts:5:5)
+2020-12-04T12:33:57.572Z - info: APPLICATION: Environment: local!
+2020-12-04T12:33:57.574Z - info: MONGO: Connection attempted with local:local
+2020-12-04T12:33:57.625Z - info: MONGO: Mongoose connected!
+2020-12-04T12:33:57.840Z - error: uncaughtException: listen EADDRINUSE: address already in use :::8043 date=Fri Dec 04 2020 13:33:57 GMT+0100 (Central European Standard Time), pid=12504, uid=null, gid=null, cwd=C:\Users\Ematic\Documents\Test\server, execPath=C:\Program Files\nodejs\node.exe, version=v14.15.0, argv=[C:\Program Files\nodejs\node.exe, C:\Users\Ematic\Documents\Test\server\run.ts], rss=735109120, heapTotal=321720320, heapUsed=298617808, external=20084634, arrayBuffers=18445603, loadavg=[0, 0, 0], uptime=785260
+Error: listen EADDRINUSE: address already in use :::8043
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Server.startServer (C:\Users\Ematic\Documents\Test\server\core\server.ts:200:42)
+    at Function.bootstrap (C:\Users\Ematic\Documents\Test\server\core\server.ts:103:14)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at run (C:\Users\Ematic\Documents\Test\server\run.ts:5:5)
+2020-12-04T12:35:30.236Z - info: MONGO: Mongoose disconnected!

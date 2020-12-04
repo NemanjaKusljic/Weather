@@ -99,10 +99,10 @@ export class Server {
       await server.upsertSuperAdminUser(superAdminRole);
 
       //fetches data from weather api
-      getData();
       // start server
       server.startServer();
 
+      await getData(server);
       return server;
     } catch (error) {
       throw error;

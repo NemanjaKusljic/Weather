@@ -9,6 +9,12 @@ export class CityFactory extends Factory<ICity> {
           connection: connection,
           name: 'City',
           definition: CitySchema,
+          indexes:[
+            {
+              fields: {'id': 1 },
+              options: { 'unique': true }
+            }
+          ]
         });
       }
 }
