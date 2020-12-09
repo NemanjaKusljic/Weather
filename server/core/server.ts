@@ -255,7 +255,7 @@ export class Server {
     const cityRepo = new CityRepository(this); 
     const city = await cityRepo.databaseModel.find({});
 
-    if (!city) {
+    if (city.length == 0) {
       const dataWeather = new DataWeather();
       const data = await dataWeather.getCities();
 
