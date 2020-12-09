@@ -1,0 +1,15 @@
+/server/package-lock.json
+
+/client/node_modules
+
+#Node
+/server/node_modules
+
+#Dist
+/dist
+
+#Private
+*.log
+*.csv
+
+.idea/

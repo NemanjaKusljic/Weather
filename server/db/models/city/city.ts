@@ -22,12 +22,12 @@ export interface ICity extends IIdentifier, ISoftDelete, IAuditInfo {
       deg: Number
     },
     sys: {
-      type: Number,
-      id: Number,
-      message: Number,
-      country: String,
-      sunrise: Number,
-      sunset: Number
+      // type: Number,
+      // id: Number,
+      // message: Number,
+      country: String
+      // sunrise: Number,
+      // sunset: Number
     },
     weather: [
       {

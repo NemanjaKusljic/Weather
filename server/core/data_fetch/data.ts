@@ -43,7 +43,7 @@ export const getData = async (server: Server) => {
             el.clouds = city.clouds;
         })
       }
-    //console.log(data)
+
     return data;
   } catch (error) {
 
