@@ -37,7 +37,8 @@ import { RoleRepository } from '../repositories/role';
 import { IRole } from '../db/models/role/role';
 import { UserRepository } from '../repositories/user';
 //fetch data
-import {getData} from './data_fetch/data';
+import {DataWeather} from './data_fetch/data';
+import { CityRepository } from '../repositories/city';
 
 const fileStreamRotator = require('file-stream-rotator');
 const busboy = require('connect-busboy');
@@ -101,8 +102,8 @@ export class Server {
       //fetches data from weather api
       // start server
       server.startServer();
-
-      await getData(server);
+      server.saveCity();
+      //await getData(server);
       return server;
     } catch (error) {
       throw error;
@@ -250,6 +251,31 @@ export class Server {
     return superAdminRole;
   }
 
+  async saveCity() {
+    const cityRepo = new CityRepository(this); 
+    const city = await cityRepo.databaseModel.find({});
+
+    if (!city) {
+      const dataWeather = new DataWeather();
+      const data = await dataWeather.getCities();
+
+      for (const city of data.list) {
+        console.log(JSON.stringify(city));
+        await cityRepo.create(el => {
+            el.id = city.id;
+            el.name = city.name;
+            el.coord = city.coord;
+            el.main = city.main;
+            el.dt = city.dt;
+            el.wind = city.wind;
+            el.sys = city.sys;
+            el.weather = city.weather;
+            el.clouds = city.clouds;
+        })
+      }
+    }
+    
+  }
   async upsertSuperAdminUser(superAdminRole: Document & IRole) {
     const ur = new UserRepository(this, this.systemUserId);
 
