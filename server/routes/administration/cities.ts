@@ -10,6 +10,7 @@ import { IResponse } from '../../core/models/express/response';
 export class CityRouter extends Router {
     constructor(server: Server){
         super(server);
+        this.initRoutes();
     }
 
     initRoutes() {
@@ -19,8 +20,9 @@ export class CityRouter extends Router {
     async queryAll (request: Request, response: IResponse, next: NextFunction) {
         try {
             const cr = new CityRepository(this.server);
-            response.data = await cr.query();
-            console.log(response.data);
+
+            response.data = await cr.databaseModel.find({});
+            next();
         } catch (error) {
             next(Router.handleError(error, request, response));
         }
