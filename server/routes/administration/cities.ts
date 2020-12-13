@@ -6,6 +6,7 @@ import { Request } from 'express';
 //import { BadRequestError } from '../../core/error/user-friendly';
 import { CityRepository } from '../../repositories/city';
 import { IResponse } from '../../core/models/express/response';
+import { ICity } from '../../db/models/city/city';
 
 export class CityRouter extends Router {
     constructor(server: Server){
@@ -15,9 +16,12 @@ export class CityRouter extends Router {
 
     initRoutes() {
         this.router.route('/')
-        .get(this.queryAll.bind(this));
+        .get(this.queryAllCities.bind(this));
+
+        this.router.route('/new_city')
+        .post(this.createCity.bind(this));
     }
-    async queryAll (request: Request, response: IResponse, next: NextFunction) {
+    async queryAllCities (request: Request, response: IResponse, next: NextFunction) {
         try {
             const cr = new CityRepository(this.server);
 
@@ -27,6 +31,26 @@ export class CityRouter extends Router {
             next(Router.handleError(error, request, response));
         }
         
+    }
+
+    async createCity (request: Request, response: IResponse, next: NextFunction) {
+        try {
+            const cr = new CityRepository(this.server);
+            const city : ICity = request.body;
+            await cr.create(el => {
+                el.id = city.id;
+                el.name = city.name;
+                el.coord = city.coord;
+                el.main = city.main;
+                el.dt = city.dt;
+                el.wind = city.wind;
+                el.sys = city.sys;
+                el.weather = city.weather;
+                el.clouds = city.clouds;
+            })
+        } catch (error){
+            next(Router.handleError(error, request, response));
+        }
     }
 
     

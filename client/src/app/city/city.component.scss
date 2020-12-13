@@ -1,0 +1,21 @@
+.table{
+    width: 65vw;
+    border-collapse: collapse;
+    border: 1px solid rgb(165, 165, 236);
+
+    thead{
+        background-color: rgb(165, 165, 236);
+    }
+
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    tr{
+        &:nth-child(even){
+            background-color: rgba(165, 165, 236, 0.5);
+        }
+    }
+
+}

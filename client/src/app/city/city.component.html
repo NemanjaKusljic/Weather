@@ -1,0 +1,19 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>City Name</th>
+            <th>Country</th>
+            <th>Coordinates</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let city of cities">
+            <td>{{city.name}}</td>
+            <td>{{city.sys.country}}</td>
+            <td>Lat: {{city.coord.lat}}, Lon: {{city.coord.lon}}</td>
+        </tr>
+    </tbody>
+</table>
+
