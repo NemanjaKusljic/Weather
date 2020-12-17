@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CitiesService } from '../shared/cities.service';
 
@@ -8,12 +9,14 @@ import { CitiesService } from '../shared/cities.service';
 })
 export class CityComponent implements OnInit {
   cities: any;
-
+  //show = false;
   constructor(private citiesService: CitiesService ) { }
 
   ngOnInit(): void {
     this.loadCities();
   }
+
+
 
   loadCities() {
     this.citiesService.allCities()

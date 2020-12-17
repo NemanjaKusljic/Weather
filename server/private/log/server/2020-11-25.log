@@ -1,4 +1,0 @@
-2020-11-25T11:12:24.658Z - info: APPLICATION: Environment: local!
-2020-11-25T11:12:24.661Z - info: MONGO: Connection attempted with local:local
-2020-11-25T11:12:24.751Z - info: MONGO: Mongoose connected!
-2020-11-25T11:12:24.935Z - info: NODE: HTTPS listening on port 8043.
