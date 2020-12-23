@@ -13,17 +13,17 @@
         <tr *ngFor="let city of cities; let i = index">
             <td>
                 <div>{{city.name}}</div>
-                <div *ngIf="city.show" class="cell">Weather: {{city.weather[0].description}}</div>
+                <div *ngIf="city.show" class="cell">Weather: {{city.weather[0]?.description}}</div>
             </td>
             <td>{{city.sys.country}}</td>
             <td>
-                <div>Lat: {{city.coord.lat}}, Lon: {{city.coord.lon}}</div>
-                <div *ngIf="city.show" class="cell">Humidity: {{city.main.humidity}}</div>
+                <div>Lat: {{city.coord?.lat}}, Lon: {{city.coord?.lon}}</div>
+                <div *ngIf="city.show" class="cell">Humidity: {{city.main?.humidity}}</div>
             </td>
             
             <td>
                 <button (click)="city.show=!city.show" class="btn-details">More info</button>
-                <div *ngIf="city.show" class="cell">Wind speed: {{city.wind.speed}}</div>
+                <div *ngIf="city.show" class="cell">Wind speed: {{city.wind?.speed}}</div>
             </td>
         </tr>
         
