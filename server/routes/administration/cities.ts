@@ -6,12 +6,12 @@ import { Request } from 'express';
 //import { BadRequestError } from '../../core/error/user-friendly';
 import { CityRepository } from '../../repositories/city';
 import { IResponse } from '../../core/models/express/response';
-import { ICity } from '../../db/models/city/city';
+//import { ICity } from '../../db/models/city/city';
 
 export class CityRouter extends Router {
     constructor(server: Server){
         super(server);
-        this.initRoutes();
+        // this.initRoutes(); no need will duplicate route
     }
 
     initRoutes() {
@@ -36,18 +36,17 @@ export class CityRouter extends Router {
     async createCity (request: Request, response: IResponse, next: NextFunction) {
         try {
             const cr = new CityRepository(this.server);
-            const city : ICity = request.body;
+            const city = request.body;
+            
+            
+            
             await cr.create(el => {
-                el.id = city.id;
+                el.id = Math.floor(Math.random()*10000) + 1;
                 el.name = city.name;
-                el.coord = city.coord;
-                el.main = city.main;
-                el.dt = city.dt;
-                el.wind = city.wind;
-                el.sys = city.sys;
-                el.weather = city.weather;
-                el.clouds = city.clouds;
-            })
+                el.sys.country = city.country;
+            });
+            response.data = city;
+            next();
         } catch (error){
             next(Router.handleError(error, request, response));
         }

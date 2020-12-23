@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { CityComponent } from './city/city.component';
 import { CitiesService } from './shared/cities.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CityFormComponent } from './city-form/city-form.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CityComponent
+    CityComponent,
+    CityFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     CitiesService

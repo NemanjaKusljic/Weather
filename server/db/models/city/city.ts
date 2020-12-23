@@ -2,13 +2,13 @@ import { IIdentifier } from '../../../core/models/db/identifier';
 import { IAuditInfo, ISoftDelete } from '../../../core/models/db/audit-info';
 
 export interface ICity extends IIdentifier, ISoftDelete, IAuditInfo {
-    id: Number,
+    id?: Number,
     name: String,
-    coord: {
+    coord?: {
       lon: Number,
       lat: Number
     },
-    main: {
+    main?: {
       temp: Number,
       feels_like: Number,
       temp_min: Number,
@@ -16,8 +16,8 @@ export interface ICity extends IIdentifier, ISoftDelete, IAuditInfo {
       pressure: Number,
       humidity: Number
     },
-    dt: Number,
-    wind: {
+    dt?: Number,
+    wind?: {
       speed: Number,
       deg: Number
     },
@@ -29,15 +29,15 @@ export interface ICity extends IIdentifier, ISoftDelete, IAuditInfo {
       // sunrise: Number,
       // sunset: Number
     },
-    weather: [
+    weather?: [
       {
-        id: Number,
-        main: String,
-        description: String,
-        icon: String
+        id?: Number,
+        main?: String,
+        description?: String,
+        icon?: String
       }
     ],
-    clouds: {
+    clouds?: {
       all: Number
     }
 }
